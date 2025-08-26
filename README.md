@@ -7,15 +7,13 @@ This repository contains the files needed to run the NDI Discovery Server as a D
 - [Installation](#installation)
 
 ## Features
+This Docker image only requires two files from the repository:
+- The server binary
+- The JSON configuration file
 
-The docker only uses 2 files from the repository:
+All other files come from the original NDI Tools .gz archive and are kept to provide context, allow exploration, read the PDF manual, or use the service files on a host OS.
 
-    - The binary file with the code of the server
-    - The JSON configuration file
-
-All others files are from the original .gz file from NDI Tools. I decided to leave them in the repository for add more context for the code or if someone wants explore the code, read the manual (pdf), or use it like service in the OS.
-
-NDI has design the code to run it in differents CPU architectures, so in `./bin` folder you can find all the architectures. Every folder has the binary file for the specific architecture.
+The NDI Discovery Server supports multiple CPU architectures. The ./bin directory contains a subdirectory for each architecture, each with its corresponding binary.
 
 ## Repository Structure
 
@@ -83,27 +81,47 @@ NDI-Discovery-Server-Docker/
 
 ## Installation
 
-1. Before start the docker container you have to selectar correct binary for your architecture. To do that, you have to change the path of what binary copy the Dockerfile to the container
+1. Select the correct binary for your CPU architecture. Edit the Dockerfile and replace the placeholder in the COPY line with the matching folder name from /bin.
 
 ```Dockerfile
-COPY ./bin/{your-architecture-folder}/ndi-discovery-server ndi-discovery-server
-````
-Modify {your-architecture-folder} with the correct one inside the `/bin` folder.
+COPY ./bin/{architecture}/ndi-discovery-server ndi-discovery-server
+```
 
-Save the file.
+Available folders:
+- aarch64-newtek-linux-gnu
+- aarch64-rpi4-linux-gnueabi
+- arm-newtek-linux-gnueabihf
+- arm-rpi1-linux-gnueabihf
+- arm-rpi2-linux-gnueabihf
+- arm-rpi3-linux-gnueabihf
+- arm-rpi4-linux-gnueabihf
+- i686-linux-gnu
+- x86_64-linux-gnu
 
-2. Modify your config file as you need it, by default is set up for listening from anyone from the LAN.
+Example (x86_64):
+```Dockerfile
+COPY ./bin/x86_64-linux-gnu/ndi-discovery-server ndi-discovery-server
+```
+Save the Dockerfile.
 
+2. Adjust the configuration file as needed (defaults allow LAN access):
+File: config/ndi-discovery-service.v1.json
 ```json
 {
-  "binding": "0.0.0.0",
-  "port_no": "5959"
+    "binding": "0.0.0.0",
+    "port_no": "5959"
 }
-````
-3. Run the docker
+```
 
+3. Build and start the container:
 ```bash
 docker-compose up -d --build
-````
+```
+
+4. (Optional) Verify it is running:
+```bash
+docker ps
+docker logs discovery-server
+```
 
 
