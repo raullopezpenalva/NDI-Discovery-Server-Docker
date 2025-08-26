@@ -19,65 +19,67 @@ NDI has design the code to run it in differents CPU architectures, so in `./bin`
 
 ## Repository Structure
 
+```text
 NDI-Discovery-Server-Docker/
-    README.md
-    docker-compose.yml
-    Dockerfile
-    config/
-        ndi-discovery-service.v1.json
-    bin/
-        aarch64-newtek-linux-gnu/
-            ndi-discovery-server
-        aarch64-rpi4-linux-gnueabi/
-            ndi-discovery-server
-        arm-newtek-linux-gnueabihf/
-            ndi-discovery-server
-        arm-rpi1-linux-gnueabihf/
-            ndi-discovery-server
-        arm-rpi2-linux-gnueabihf/
-            ndi-discovery-server
-        arm-rpi3-linux-gnueabihf/
-            ndi-discovery-server
-        arm-rpi4-linux-gnueabihf/
-            ndi-discovery-server
-        i686-linux-gnu/
-            ndi-discovery-server
-        x86_64-linux-gnu
-            ndi-discovery-server
-    Install_NDI_Discovery_Server_v6/ #Extracted file from NDI Tools Installer
-        bin/
-            aarch64-newtek-linux-gnu/
-                ndi-discovery-server
-            aarch64-rpi4-linux-gnueabi/
-                ndi-discovery-server
-            arm-newtek-linux-gnueabihf/
-                ndi-discovery-server
-            arm-rpi1-linux-gnueabihf/
-                ndi-discovery-server
-            arm-rpi2-linux-gnueabihf/
-                ndi-discovery-server
-            arm-rpi3-linux-gnueabihf/
-                ndi-discovery-server
-            arm-rpi4-linux-gnueabihf/
-                ndi-discovery-server
-            i686-linux-gnu/
-                ndi-discovery-server
-            x86_64-linux-gnu
-                ndi-discovery-server
-        licenses/
-            asio.txt
-            NDI Discovery Server EULA.txt
-            rapidjson.txt
-            rapidxml.txt
-        services-files/
-            init.d/
-                ndi-discovery
-            systemd/
-                ndi-discovery.service
-        Install_NDI_Discovery_Server_v6.gz
-        Install_NDI_Discovery_Server_v6.sh
-        NDI Discovery Service.pdf
-        Version.txt
+├── README.md
+├── docker-compose.yml
+├── Dockerfile
+├── config/
+│   └── ndi-discovery-service.v1.json
+├── bin/
+│   ├── aarch64-newtek-linux-gnu/
+│   │   └── ndi-discovery-server
+│   ├── aarch64-rpi4-linux-gnueabi/
+│   │   └── ndi-discovery-server
+│   ├── arm-newtek-linux-gnueabihf/
+│   │   └── ndi-discovery-server
+│   ├── arm-rpi1-linux-gnueabihf/
+│   │   └── ndi-discovery-server
+│   ├── arm-rpi2-linux-gnueabihf/
+│   │   └── ndi-discovery-server
+│   ├── arm-rpi3-linux-gnueabihf/
+│   │   └── ndi-discovery-server
+│   ├── arm-rpi4-linux-gnueabihf/
+│   │   └── ndi-discovery-server
+│   ├── i686-linux-gnu/
+│   │   └── ndi-discovery-server
+│   └── x86_64-linux-gnu/
+│       └── ndi-discovery-server
+└── Install_NDI_Discovery_Server_v6/
+    ├── bin/
+    │   ├── aarch64-newtek-linux-gnu/
+    │   │   └── ndi-discovery-server
+    │   ├── aarch64-rpi4-linux-gnueabi/
+    │   │   └── ndi-discovery-server
+    │   ├── arm-newtek-linux-gnueabihf/
+    │   │   └── ndi-discovery-server
+    │   ├── arm-rpi1-linux-gnueabihf/
+    │   │   └── ndi-discovery-server
+    │   ├── arm-rpi2-linux-gnueabihf/
+    │   │   └── ndi-discovery-server
+    │   ├── arm-rpi3-linux-gnueabihf/
+    │   │   └── ndi-discovery-server
+    │   ├── arm-rpi4-linux-gnueabihf/
+    │   │   └── ndi-discovery-server
+    │   ├── i686-linux-gnu/
+    │   │   └── ndi-discovery-server
+    │   └── x86_64-linux-gnu/
+    │       └── ndi-discovery-server
+    ├── licenses/
+    │   ├── asio.txt
+    │   ├── NDI Discovery Server EULA.txt
+    │   ├── rapidjson.txt
+    │   └── rapidxml.txt
+    ├── services-files/
+    │   ├── init.d/
+    │   │   └── ndi-discovery
+    │   └── systemd/
+    │       └── ndi-discovery.service
+    ├── Install_NDI_Discovery_Server_v6.gz
+    ├── Install_NDI_Discovery_Server_v6.sh
+    ├── NDI Discovery Service.pdf
+    └── Version.txt
+```
 
 ## Installation
 
