@@ -34,4 +34,4 @@ EXPOSE 5959/tcp
 # Ensure the config file has appropriate permissions for the 'ndi' user
 # Modify the binding address and port in the config file as needed
 # For more options, refer to the NDI Discovery Server documentation
-ENTRYPOINT ["/ndi-discovery/ndi-discovery-server","-service","-config","/config/ndi-discovery-service.v1.json"]
+ENTRYPOINT ["./ndi-discovery-server","-service","-config","./ndi-discovery-service.v1.json"]
