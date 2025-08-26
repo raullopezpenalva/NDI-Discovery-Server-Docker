@@ -15,7 +15,7 @@ WORKDIR /ndi-discovery
 # Change the source path with the correct archiqtecture
 # (x86_64-linux-gnu, arm64-linux-gnu, armhf-linux-gnu)
 COPY ./bin/x86_64-linux-gnu/ndi-discovery-server ndi-discovery-server
-COPY ./config/ndi-discovery-service.v1.json /config/ndi-discovery-service.v1.json
+COPY ./config/ndi-discovery-service.v1.json ndi-discovery-service.v1.json
 
 # Harden perms
 RUN chown -R ndi:ndi /ndi-discovery \

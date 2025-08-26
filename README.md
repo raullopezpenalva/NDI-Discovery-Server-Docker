@@ -121,7 +121,5 @@ docker-compose up -d --build
 4. (Optional) Verify it is running:
 ```bash
 docker ps
-docker logs discovery-server
+docker logs ndi-discovery-server
 ```
-
-
