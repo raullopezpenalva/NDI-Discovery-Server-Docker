@@ -1,0 +1,16 @@
+[Unit]
+Description=NDI Discovery Service
+After=network.target
+
+[Service]
+Type=simple
+EnvironmentFile=/etc/default/ndi-discovery
+WorkingDirectory=${INSTALL_PATH}
+ExecStart=${INSTALL_PATH}/ndi-discovery-server -service
+Restart=always
+RestartSec=5
+User=nobody
+Group=nobody
+
+[Install]
+WantedBy=multi-user.target

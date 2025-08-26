@@ -1,0 +1,13 @@
+services:
+  ndi-discovery:
+    container_name: ndi-discovery-server
+    build: .
+    # Option A: host networking (best if broadcast/multicast)
+    network_mode: host
+    restart: unless-stopped
+    # user: "1000:1000"  # or keep USER from Dockerfile
+    # volumes:
+    #  - ./config:/config:ro
+    # Option B (remove network_mode above) expose single port:
+    # ports:
+    #   - "5960:5960"
